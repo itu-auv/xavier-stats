@@ -6,7 +6,7 @@
 
 ### Todo: move the tegrastats executable under scripts/ folder :D
 
-### TODO: in the mail launch file check if the current operating is jetson, otherwise don't run the package. :D
+### TODO: in the mail launch file check if the current operating is jetson, otherwise don't run the package. :D use env variabl $OSTYPE.
 
 ### Maybe add a node, that will have a service like /node/get_current_os which will return OSX JETSON or UBUNTU etc. therefore when a node wants to use this packages features it will know that this is not a jetson hardware
 
