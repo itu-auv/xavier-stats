@@ -1,0 +1,6 @@
+<launch>
+    <!-- node -->
+    <node pkg="xavier_stats" type="xavier_status_node.py" name="xavier_stats" output="screen">
+        <param name="interval" value="100"/>
+    </node>
+</launch>

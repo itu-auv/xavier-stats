@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>xavier_stats</name>
+  <version>1.0.0</version>
+  <description>The xavier_stats package checks for the system statistics with the executable 'tegrastats' provided by Nvidia.</description>
+  <maintainer email="senceryazici@gmail.com">Sencer Yazici</maintainer>
+  <license>MIT</license>
+  <!-- <url type="website">http://wiki.ros.org/xavier_stats</url> -->
+  <author email="senceryazici@gmail.com">Sencer Yazici</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <exec_depend>rospy</exec_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

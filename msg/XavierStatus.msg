@@ -1,0 +1,11 @@
+std_msgs/Header header
+uint16 ram
+uint8[] cpu_usage
+uint16[] cpu_clock
+float32 gpu_temp
+float32 board_temp
+float32 diode_temp
+float32 aux_temp
+float32 cpu_temp
+float32 thermal_temp
+string raw
