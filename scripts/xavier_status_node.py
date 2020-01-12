@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import subprocess
 import rospy
-from std_msgs.msg import String
+from std_msgs.msg import String, Float32
 from xavier_stats.msg import XavierStatus
 
 rospy.init_node("xavier_status_node", anonymous=True)
@@ -18,8 +18,13 @@ def runProcess(exe):
 
 
 interval = rospy.get_param("~interval")
-pub = rospy.Publisher("/xavier/stats", XavierStatus, queue_size=10)
+pub = rospy.Publisher("/turquoise/xavier/stats", XavierStatus, queue_size=10)
+pub_gputemp = rospy.Publisher("/turquoise/xavier/gpu_temp", Float32, queue_size=10)
+pub_cputemp = rospy.Publisher("/turquoise/xavier/cpu_temp", Float32, queue_size=10)
+pub_boardtemp = rospy.Publisher("/turquoise/xavier/board_temp", Float32, queue_size=10)
+pub_auxtemp = rospy.Publisher("/turquoise/xavier/aux_temp", Float32, queue_size=10)
 
+# pub_ram = rospy.Publisher("/turquoise/xavier/ram", Float32, queue_size=10)
 
 # data: "RAM 2336/15827MB (lfb 2948x4MB) CPU [2%@1190,1%@1190,0%@1190,0%@1190,off,off,off,off]\
 #   \ EMC_FREQ 0% GR3D_FREQ 0% AO@25.5C GPU@26C Tboard@27C Tdiode@28.75C AUX@25C CPU@27C\
@@ -54,5 +59,10 @@ for line in runProcess(('tegrastats --interval ' + str(interval)).split()):
         msg.raw = line
 
         pub.publish(msg)
+
+        pub_gputemp.publish(Float32(msg.gpu_temp))
+        pub_cputemp.publish(Float32(msg.cpu_temp))
+        pub_boardtemp.publish(Float32(msg.board_temp))
+        pub_auxtemp.publish(Float32(msg.aux_temp))
     else:
         break
