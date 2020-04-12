@@ -1,12 +1,7 @@
 # Xavier Statistics
 
-### Todo: Add readme
 
-### Todo: Add Service to overclock the jetson, nodes will use /xavier/overclock std_srvs/SetBool to overclock the CPU or switch back to normal state. Better power management 😎
-
-### Todo: move the tegrastats executable under scripts/ folder :D
-
-### TODO: in the mail launch file check if the current operating is jetson, otherwise don't run the package. :D use env variabl $OSTYPE.
-
-### Maybe add a node, that will have a service like /node/get_current_os which will return OSX JETSON or UBUNTU etc. therefore when a node wants to use this packages features it will know that this is not a jetson hardware
-
+## TODO
+- Add Readme
+- Add Service to overclock the jetson, nodes can use `/xavier/overclock std_srvs/SetBool` to overclock the CPU or switch back to normal state. Better power management 😎
+- Check if OSTYPE is identical with that of Jetson Xavıer Hardware, if not, don't attend to run Jetson Xavier Hardware Spesific Tools
